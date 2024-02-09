@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct progressive_overloadApp: App {
+struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
         }
     }
+}
+
+#Preview {
+    ContentView()
 }

@@ -10,14 +10,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Spacer()
+            HStack(alignment: .top) {
+                NavigationLink("new workout", destination: NewWorkout())
+                
+            }
         }
         .padding()
     }
 }
+
+struct NewWorkout: View {
+    var body: some View {
+        Text("new workout page");
+    }
+}
+
+
+//struct NavigationBar: View {
+//    var body: some View {
+//        
+//    }
+//}
+
 
 #Preview {
     ContentView()
