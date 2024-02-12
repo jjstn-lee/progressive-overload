@@ -18,24 +18,28 @@ struct ContentView: View {
 }
 
 struct WorkoutPanel: View {
+    
     var body: some View {
         HStack {
-            WorkoutRow(setID: 4);
+            setColumn(setNum: 2);
         }
     }
 }
 
-struct WorkoutRow: View {
-    @State private var setID: Int;
-    init(setID: Int) {
-        self.setID = setID;
+
+struct setColumn: View {
+    @State private var setNum: Int;
+    init(setNum: Int) {
+        self.setNum = setNum;
     }
     
     var body: some View {
-        HStack {
-            Text("\(setID)");
-            NumberBox(isReps: true);
-            NumberBox(isReps: false);
+        VStack {
+            var currSet = 1;
+            while currSet <= setNum {
+                Text("set");
+                currSet+=1;
+            }
         }
     }
 }
@@ -50,7 +54,7 @@ struct NumberBox: View {
         TextField(isReps ? "reps" : "weight", text: $numericInput)
             .keyboardType(.numberPad)
             .multilineTextAlignment(.trailing)
-            .frame(width: 50)
+            .frame(width: 75)
         // only allows decimal numbers
             .onReceive(Just(numericInput)) { newNumericInput in
                 let filtered = newNumericInput.filter {"0123456789".contains($0) }
