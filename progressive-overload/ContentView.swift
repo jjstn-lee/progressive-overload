@@ -9,42 +9,76 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
+    @State private var numOfWorkouts = 0;
     var body: some View {
         VStack {
-            WorkoutPanel()
+            ForEach(0..<numOfWorkouts, id: \.self) { index in
+                WorkoutPanel()
+            }
         }
         .padding()
+        
+        Button("add new workout") {
+            numOfWorkouts += 1;
+        }
     }
 }
 
 struct WorkoutPanel: View {
-    
-    var body: some View {
-        HStack {
-            setColumn(setNum: 2);
-        }
-    }
-}
-
-
-struct setColumn: View {
-    @State private var setNum: Int;
-    init(setNum: Int) {
-        self.setNum = setNum;
-    }
+    @State var workoutCount: Int = 4;
+    @State private var numberOfComponents = 1
     
     var body: some View {
         VStack {
-            var currSet = 1;
-            while currSet <= setNum {
-                Text("set");
-                currSet+=1;
+            Rectangle()
+                .foregroundColor(Color(red: 0.424, green: 0.678, blue: 0.788)) // Change color as needed
+               .frame(height: 10)
+               .edgesIgnoringSafeArea(.top)
+            
+            Button("add another set") {
+                self.numberOfComponents += 1
             }
+            // Dynamically generate components based on the number of clicks
+            ForEach(0..<numberOfComponents, id: \.self) { index in
+                WorkoutRow(setCount: numberOfComponents)
+            }
+            
+            Button("remove set") {
+                if (numberOfComponents > 1) {
+                    self.numberOfComponents -= 1
+                }
+            }
+            
+        }
+    }
+}
+ 
+struct WorkoutRow: View {
+    var setCount: Int;
+    
+    var body: some View {
+        HStack {
+            SetBox(setCount: setCount);
+            InputBox(isReps: false);
+            InputBox(isReps: true);
         }
     }
 }
 
-struct NumberBox: View {
+struct SetBox: View {
+    @State var setCount: Int
+    
+    var body: some View {
+        Text(String(setCount));
+    }
+}
+
+
+
+/**
+  * View allowing users to enter  number of reps/amount of weight for a given exercise.
+ */
+struct InputBox: View {
     @State private var numericInput: String = "";
     @State private var isReps: Bool;
     init(isReps: Bool) {
