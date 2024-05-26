@@ -11,28 +11,43 @@ import Combine
 struct ContentView: View {
     @State private var numOfWorkouts = 0;
     var body: some View {
-        VStack {
-            ForEach(0..<numOfWorkouts, id: \.self) { index in
-                WorkoutPanel()
+        NavigationView {
+            
+            VStack {
+                ForEach(0..<numOfWorkouts, id: \.self) { index in
+                    WorkoutPanel()
+                }
             }
-        }
-        .padding()
-        
-        Button("add new workout") {
-            numOfWorkouts += 1;
+            .padding()
+            
+            NavigationLink(destination: newExerciseMenu()) {
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                    Text("add new workout")
+                        .foregroundColor(.blue)
+                }
+                .padding()
+                .background(Color.gray.opacity(0.45))
+                .cornerRadius(8)
+            }
+            Button("add new workout") {
+                numOfWorkouts += 1;
+            }
         }
     }
 }
 
 struct WorkoutPanel: View {
     @State var workoutCount: Int = 4;
+//    @State var exerciseName: String;
     @State private var numberOfComponents = 1
+    
     
     var body: some View {
         VStack {
             Rectangle()
                 .foregroundColor(Color(red: 0.424, green: 0.678, blue: 0.788)) // Change color as needed
-               .frame(height: 10)
+               .frame(height: 15)
                .edgesIgnoringSafeArea(.top)
             
             Button("add another set") {
@@ -101,7 +116,7 @@ struct InputBox: View {
 
 
 
-//struct NavigationBar: View {
+// struct NavigationBar: View {
 //    var body: some View {
 //        
 //    }

@@ -11,6 +11,7 @@
 		3618D2AD2B746E4400F10D92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3618D2AC2B746E4400F10D92 /* ContentView.swift */; };
 		3618D2AF2B746E4500F10D92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3618D2AE2B746E4500F10D92 /* Assets.xcassets */; };
 		3618D2B22B746E4500F10D92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3618D2B12B746E4500F10D92 /* Preview Assets.xcassets */; };
+		3668042E2C03D41B0083BD44 /* newExerciseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3668042D2C03D41B0083BD44 /* newExerciseMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3618D2AC2B746E4400F10D92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3618D2AE2B746E4500F10D92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3618D2B12B746E4500F10D92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3668042D2C03D41B0083BD44 /* newExerciseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newExerciseMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				3618D2AA2B746E4400F10D92 /* progressive_overloadApp.swift */,
 				3618D2AC2B746E4400F10D92 /* ContentView.swift */,
+				3668042D2C03D41B0083BD44 /* newExerciseMenu.swift */,
 				3618D2AE2B746E4500F10D92 /* Assets.xcassets */,
 				3618D2B02B746E4500F10D92 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				3618D2AD2B746E4400F10D92 /* ContentView.swift in Sources */,
 				3618D2AB2B746E4400F10D92 /* progressive_overloadApp.swift in Sources */,
+				3668042E2C03D41B0083BD44 /* newExerciseMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
